@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Resolving User3's orthogonal absolute-product question: minimum and minimizers"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-05"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/user3-2026-orthogonal-absolute-product-minimum?version=2"
+doi: "10.5281/zenodo.23885984"
+license: "CC-BY-4.0"

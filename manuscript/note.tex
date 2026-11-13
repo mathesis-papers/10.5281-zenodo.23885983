@@ -1,0 +1,346 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\title{Resolving User3's orthogonal absolute-product question:\\minimum and minimizers}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{November 1, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We resolve User3's question \cite[question 515549, revision 1,
+September 25, 2026]{question}: for every nonsingular real square matrix
+of positive size, the orthogonal minimum of
+$\rho(|PQ|\,|Q^\top P^{-1}|)$ is attained and equals one.
+Thus the proposed strict uniform lower bound cannot hold for any such
+matrix. We give a self-contained exposition of the triangularization
+proof in \cite{formal}, then characterize every minimizer by independent
+row and column permutations to triangular form. For fixed $P$, the set
+of minimizers is finite and has an explicit description using row-permuted
+QR factorizations. The same minimum holds over the special orthogonal
+group. Finally, the companion absolute-row-sum balancing question
+\cite{balance} follows from the Yamabe--Yujobo theorem.
+\end{abstract}
+
+\section{The question and its attained minimum}
+
+For $K\geq1$, write $O(K)=\{Q\in\RR^{K\times K}:Q^\top Q=QQ^\top=I\}$.
+For a matrix $A$, $|A|$ denotes entrywise absolute value, and $\rho(A)$
+is the maximum modulus of its complex eigenvalues. Fix
+$P\in GL_K(\RR)$ and set
+\[
+ M_P(Q)=|PQ|\,|Q^\top P^{-1}|,\qquad Q\in O(K).
+\]
+User3 \cite{question} asks whether a quantity $\beta(P)>1$ can bound
+$\rho(M_P(Q))$ below for every orthogonal $Q$, on a suitable class of
+nonsingular matrices, and asks for an intrinsic characterization of the
+infimum. The answer to the second question is the constant one; the answer
+to the first is negative for every individual $P$.
+
+The triangularization argument already appears in the formal source
+\cite[\texttt{result}]{formal}. We present its complete elementary proof,
+using a trace bound in place of spectral-radius monotonicity. Row
+Gram--Schmidt is equivalently QR factorization of $P^\top$, rather than
+of $P$; see \cite{qr} for the QR construction. Section 2 gives the equality
+cases. Section 3 relates the objective to diagonal scaling, and Section 4
+settles the companion question from the same posing author.
+
+\begin{theorem}\label{thm:minimum}
+For every $K\geq1$ and $P\in GL_K(\RR)$,
+\[
+ \min_{Q\in O(K)}\rho(M_P(Q))
+ =\inf_{Q\in O(K)}\rho(M_P(Q))=1.
+\]
+An attaining matrix $Q$ is obtained by applying ordered Gram--Schmidt to
+the rows of $P$ and placing the resulting unit vectors in its columns.
+The same attained minimum holds over $SO(K)$.
+\end{theorem}
+
+\begin{proof}
+For arbitrary $Q\in O(K)$, put $A=PQ$ and $B=Q^\top P^{-1}$.
+Then $AB=I$. The triangle inequality gives, for every $i,j$,
+\[
+ \delta_{ij}=\left|\sum_{k=1}^K a_{ik}b_{kj}\right|
+ \leq\sum_{k=1}^K|a_{ik}|\,|b_{kj}|=(M_P(Q))_{ij}.
+\]
+In particular, $\tr M_P(Q)\geq K$. If $\lambda_1,\ldots,\lambda_K$
+are the eigenvalues, counted with algebraic multiplicity, then
+\[
+ K\leq\tr M_P(Q)
+ =\left|\sum_{j=1}^K\lambda_j\right|
+ \leq\sum_{j=1}^K|\lambda_j|
+ \leq K\rho(M_P(Q)).
+\]
+Division by $K>0$ proves the universal bound, without a
+diagonalizability assumption.
+
+Let $p_1,\ldots,p_K$ be the row vectors of $P$, viewed in $\RR^K$.
+They are linearly independent. Ordered Gram--Schmidt defines
+\[
+ v_i=p_i-\sum_{j<i}\langle p_i,q_j\rangle q_j,
+ \qquad q_i=\frac{v_i}{\|v_i\|_2}.
+\]
+Each $v_i$ is nonzero by independence. The vectors $q_i$ are an
+orthonormal basis and
+$p_i\in\operatorname{span}(q_1,\ldots,q_i)$.
+For $Q_*=[q_1\ \cdots\ q_K]$, the matrix $T=PQ_*$ therefore satisfies
+\[
+ t_{ij}=\langle p_i,q_j\rangle=0\quad(i<j),
+ \qquad t_{ii}=\|v_i\|_2>0.
+\]
+Thus $T$ is nonsingular lower triangular, and
+$T^{-1}=Q_*^\top P^{-1}$ is lower triangular. For completeness,
+forward substitution in $Tx=e_j$ gives $x_i=0$ for $i<j$ and
+$x_j=1/t_{jj}$, establishing both assertions about the inverse.
+
+The matrix $|T|\,|T^{-1}|$ is lower triangular. In its $i$th diagonal
+entry, the first factor can be nonzero only for $k\leq i$, while the
+second can be nonzero only for $k\geq i$. Hence
+\[
+ (|T|\,|T^{-1}|)_{ii}
+ =|t_{ii}|\,|(T^{-1})_{ii}|=1.
+\]
+Its characteristic polynomial is $(x-1)^K$, so its spectral radius is
+one. This proves actual attainment, and therefore the minimum and
+infimum assertions.
+
+Finally, for any diagonal sign matrix $D$, entrywise absolute values give
+$M_P(QD)=M_P(Q)$. Choose $D$ with $\det D=\det Q_*$; such a choice is
+possible also when $K=1$. Then $Q_*D\in SO(K)$ and still attains one.
+\end{proof}
+
+Consequently there is no $\beta(P)>1$ valid for every orthogonal $Q$, for any
+nonsingular $P$ or any nonempty class of such matrices. This settles both
+requests in \cite{question}, including attainment rather than just an
+asymptotic approximation to the infimum.
+
+\section{Every equality case and every minimizer}
+
+The distinction between a unit spectral radius and the identity matrix
+is essential. The following characterization makes that distinction
+precise. Row and column permutations in its statement are independent.
+
+\begin{theorem}\label{thm:equality}
+For $A\in GL_K(\RR)$, $K\geq1$,
+\[
+ \rho(|A|\,|A^{-1}|)=1
+ \quad\Longleftrightarrow\quad
+ SAC\text{ is lower triangular for some permutation matrices }S,C.
+\]
+\end{theorem}
+
+\begin{proof}
+Put $M=|A|\,|A^{-1}|$. As in the preceding proof, $M\geq I$ entrywise.
+Suppose $\rho(M)=1$. Every eigenvalue $\lambda_j$ has
+$\Re\lambda_j\leq1$, whereas
+\[
+ K\leq\tr M=\sum_{j=1}^K\Re\lambda_j\leq K.
+\]
+Equality forces every $\Re\lambda_j=1$; together with $|\lambda_j|\leq1$
+this gives $\lambda_j=1$. Thus $N=M-I\geq0$ has characteristic polynomial
+$x^K$, and Cayley--Hamilton gives $N^K=0$.
+
+The directed graph with an edge $i\to j$ when $N_{ij}>0$ has no directed
+cycle. A positive cycle of length $r$ would give
+$(N^{mr})_{ii}>0$ for every positive integer $m$, contradicting
+nilpotence. Reverse topological ordering therefore gives a permutation
+$S$ for which $M'=SMS^\top$ is lower triangular with diagonal one.
+Set $A'=SA$ and $B'=A^{-1}S^\top$, so $M'=|A'|\,|B'|$.
+For each $j$, choose $k_j$ with
+\[
+ |A'_{jk_j}|\,|B'_{k_jj}|>0;
+\]
+such an index exists because $M'_{jj}=1$.
+These indices are distinct: if $i<j$ and $k_i=k_j$, then
+$|A'_{ik_i}|\,|B'_{k_jj}|>0$ contributes to the zero entry $M'_{ij}$,
+a contradiction. Furthermore, for $i<j$, nonnegativity and
+$M'_{ij}=0$ imply $A'_{ik_j}=0$, since $B'_{k_jj}\ne0$.
+The permutation matrix $C=[e_{k_1}\ \cdots\ e_{k_K}]$ consequently
+makes $SAC$ lower triangular.
+
+Conversely, if $T=SAC$ is nonsingular lower triangular, then
+\[
+ |T|\,|T^{-1}|=S|A|\,|A^{-1}|S^\top
+\]
+is lower triangular with diagonal one, as in Theorem~\ref{thm:minimum}.
+Permutation similarity preserves the spectrum, proving the converse.
+\end{proof}
+
+\begin{corollary}\label{cor:minimizers}
+For each row permutation $S$, fix the factorization
+$SPU_S=L_S$ with $U_S$ orthogonal and $L_S$ lower triangular with
+positive diagonal. Then
+\[
+ \argmin_{Q\in O(K)}\rho(M_P(Q))
+ =\{U_SW:S\text{ a permutation matrix},\ W\text{ a signed permutation matrix}\}.
+\]
+In particular, there are at most $2^K(K!)^2$ minimizing matrices.
+\end{corollary}
+
+\begin{proof}
+A signed permutation matrix has exactly one entry $\pm1$ in each row
+and column. Its absolute value is a permutation matrix, so
+$M_P(QW)=M_P(Q)$.
+If $Q$ minimizes, Theorem~\ref{thm:equality} gives $S,C$ with
+$T=SPQC$ lower triangular. Then
+\[
+ U_S^\top QC=L_S^{-1}T
+\]
+is both orthogonal and lower triangular. Such a matrix is diagonal with
+diagonal entries $\pm1$: its last column has only its last entry
+nonzero, with modulus one; orthogonality makes the other entries in the
+last row zero, and induction completes the assertion.
+Thus $Q=U_SDC^\top$ for a diagonal sign matrix $D$, which has the required
+form. Conversely, $SPU_S=L_S$ and permutation similarity give
+$\rho(M_P(U_S))=1$; signed-permutation invariance gives the same for
+$U_SW$. There are $K!$ possible $S$ and $2^K K!$ signed permutations,
+which proves the bound; different choices can produce the same matrix.
+\end{proof}
+
+\paragraph{A rational example.}
+Take
+\[
+ P=\frac15\begin{pmatrix}3&4\\-1&7\end{pmatrix},\qquad
+ Q_*=\frac15\begin{pmatrix}3&-4\\4&3\end{pmatrix}.
+\]
+Then $\det P=1$, $Q_*\in SO(2)$, and
+\[
+ PQ_*=\begin{pmatrix}1&0\\1&1\end{pmatrix},\qquad
+ M_P(Q_*)=\begin{pmatrix}1&0\\2&1\end{pmatrix}.
+\]
+This is a nonidentity, nondiagonalizable minimizer of the objective.
+In contrast,
+\[
+ M_P(I)=\begin{pmatrix}1&24/25\\14/25&1\end{pmatrix},\qquad
+ \rho(M_P(I))=1+\frac{4\sqrt{21}}{25}>1.
+\]
+
+\section{Relation to diagonal scaling}
+
+There is a precise link with optimally scaled condition numbers. For fixed
+$A\in GL_K(\RR)$, put $s(A)=\rho(|A|\,|A^{-1}|)$ and
+$\kappa_\infty(B)=\|B\|_\infty\|B^{-1}\|_\infty$.
+Rump \cite[Lemma 2.2 and Theorem 3.1]{rump} proves, without irreducibility
+assumptions,
+\begin{align*}
+ s(A)&=\inf_{D>0\text{ diagonal}}
+    \|D^{-1}|A^{-1}|\,|A|D\|_\infty\\
+ &=\inf_{D_1,D_2>0\text{ diagonal}}\kappa_\infty(D_1AD_2).
+\end{align*}
+Here the equality of the spectral radii of $XY$ and $YX$ follows from
+$\det(I-zXY)=\det(I-zYX)$, applied to $X=|A|$, $Y=|A^{-1}|$.
+It does not require $|A|$ to be invertible.
+These are infima: for $T=\left(\begin{smallmatrix}1&0\\1&1\end{smallmatrix}\right)$
+and $D=\diag(d_1,d_2)>0$,
+\[
+ \|D^{-1}|T^{-1}|\,|T|D\|_\infty=1+2d_1/d_2>1,
+\]
+although the infimum is one. The orthogonal minimum of
+Theorem~\ref{thm:minimum}, by contrast, is attained.
+
+\section{The companion row-balancing question}
+
+User3's question 515547 \cite{balance} asks whether, for nonsingular
+lower triangular $L$, there are $Q\in O(K)$ and $c>0$ such that
+$|Q^\top L^{-1}|e=ce$, where $e=(1,\ldots,1)^\top$.
+The answer is affirmative, including without triangularity of $L$.
+
+\begin{corollary}\label{cor:balance}
+For every $K\geq1$ and $L\in GL_K(\RR)$, there exist $Q\in SO(K)$ and
+$c>0$ satisfying $|Q^\top L^{-1}|e=ce$.
+\end{corollary}
+
+\begin{proof}
+For $K\geq2$, the Yamabe--Yujobo theorem
+\cite[p.~22, Theorem]{yamabe} states that a continuous real-valued
+function on the unit sphere in $\RR^K$ takes a common value on some
+orthonormal basis. Apply it to
+$f(u)=\|u^\top L^{-1}\|_1$. This function is continuous and strictly
+positive on the sphere, since $L$ is invertible. For the resulting basis
+$q_1,\ldots,q_K$, put $Q=[q_1\ \cdots\ q_K]$ and $c=f(q_i)>0$.
+The $i$th component of $|Q^\top L^{-1}|e$ is exactly $f(q_i)$.
+Since $f(-u)=f(u)$, a column-sign change can make $\det Q=1$ while
+preserving all row sums. For $K=1$, take $Q=1$ and $c=|L^{-1}|$.
+\end{proof}
+
+This settles exact balancing and hence the source's fallback question
+about approximate regularization. Balancing and spectral minimization
+need not use the same $Q$. For $P=L=\diag(1,2)$, every orthogonal
+$2\times2$ matrix has
+$|Q|=\left(\begin{smallmatrix}a&b\\b&a\end{smallmatrix}\right)$ with
+$a,b\geq0$ and $a^2+b^2=1$. Equal inverse-factor row sums require
+$a+b/2=b+a/2$, so $a=b=1/\sqrt2$. Then
+\[
+ M_P(Q)=\begin{pmatrix}1&1/2\\2&1\end{pmatrix},\qquad
+ \rho(M_P(Q))=2.
+\]
+Thus no balancing matrix is a spectral minimizer in this example.
+
+\paragraph{Formal correspondence.}
+The main theorem's universal lower bound and existence of an attaining
+orthogonal matrix are the statement of \cite[\texttt{result}]{formal},
+at the pinned revision listed below. Its definitions use entrywise absolute
+values and the complex spectral radius of the real matrix. That source
+proves the lower bound by spectral-radius monotonicity and constructs an
+attaining matrix by Gram--Schmidt triangularization. The trace bound above
+is an alternative elementary proof. The equality classification,
+special-orthogonal refinement, examples and balancing corollary have the
+mathematical proofs given here.
+
+\paragraph{Availability and license.}
+The accompanying source package contains this article's complete LaTeX
+source, metadata and a standard-library rational-arithmetic check program,
+with build instructions. Original exposition: CC BY 4.0,
+\url{https://creativecommons.org/licenses/by/4.0/}.
+The MathOverflow questions are attributed to User3 under CC BY-SA 4.0
+and are paraphrased here.
+
+\begin{thebibliography}{9}
+\bibitem{question}
+User3 (MathOverflow user 600125),
+\emph{A nontrivial lower bound for the orthogonally transformed absolute product},
+MathOverflow question 515549, revision 1, September 25, 2026,
+revision GUID \texttt{CB719581-BCE3-4573-931E-15327002F861}.
+\url{https://mathoverflow.net/questions/515549}.
+
+\bibitem{formal}
+The Omega Institute, \emph{OrthogonalAbsoluteProductMinimum},
+Lean source, \texttt{D5/S1/Eigenstructure/}\allowbreak
+\texttt{OrthogonalAbsoluteProductMinimum.lean},
+theorem \texttt{result}, 2026.
+Revision \texttt{fd1633144086085a16f35c8171e2f4b6186a6fbb}.
+\href{https://github.com/the-omega-institute/trureturing/blob/fd1633144086085a16f35c8171e2f4b6186a6fbb/D5/S1/Eigenstructure/OrthogonalAbsoluteProductMinimum.lean}{Pinned source}.
+
+\bibitem{qr}
+N.~J. Higham, \emph{What Is a QR Factorization?}, November 10, 2020.
+\url{https://nhigham.com/2020/11/10/what-is-a-qr-factorization/}.
+
+\bibitem{rump}
+S.~M. Rump, \emph{Optimal scaling for $p$-norms and componentwise distance
+to singularity}, IMA Journal of Numerical Analysis \textbf{23} (2003), 1--9.
+\href{https://doi.org/10.1093/imanum/23.1.1}{doi:10.1093/imanum/23.1.1}.
+
+\bibitem{balance}
+User3 (MathOverflow user 600125),
+\emph{Can orthogonal transformations balance absolute row sums?},
+MathOverflow question 515547, September 25, 2026,
+body in revision 1, GUID \texttt{67542193-9900-47F2-A682-20344D440FF0};
+revision 2 changes title capitalization.
+\url{https://mathoverflow.net/questions/515547}.
+
+\bibitem{yamabe}
+Hidehiko Yamabe and Zuiman Yujobo, \emph{On the continuous function defined on a
+sphere}, Osaka Mathematical Journal \textbf{2} (1950), 19--22.
+\href{https://doi.org/10.18910/4429}{doi:10.18910/4429}.
+\end{thebibliography}
+\end{document}

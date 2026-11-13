@@ -1,0 +1,62 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 80980,
+      "matches_public": null,
+      "path": "paper.pdf",
+      "public_sha256": null,
+      "sha256": "805cf769eb415c69e5fad5bc5a595cdb7d17a484ece2c18e649165213d1a3a26"
+    },
+    "source": {
+      "bytes": 11203,
+      "matches_public": null,
+      "path": "manuscript/",
+      "public_sha256": null,
+      "sha256": "864a589fac81968f5d9ac782ccee5a312deeed7e1c5fcddb3df23c1048a808fb"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We resolve User3's question (question 515549, revision 1, September 25, 2026): for every nonsingular real square matrix of positive size, the orthogonal minimum of rho(|PQ||Q^T P^{-1}|) is attained and equals one. Thus the proposed strict uniform lower bound cannot hold for any such matrix. We give a self-contained exposition of the triangularization proof in the pinned formal source, then characterize every minimizer by independent row and column permutations to triangular form. For fixed P, the set of minimizers is finite and has an explicit description using row-permuted QR factorizations. The same minimum holds over the special orthogonal group. Finally, the companion absolute-row-sum balancing question follows from the Yamabe-Yujobo theorem.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": "10.5281/zenodo.23885983",
+    "current_version": 2,
+    "doi": "10.5281/zenodo.23885984",
+    "lean_source": {
+      "revision": "fd1633144086085a16f35c8171e2f4b6186a6fbb",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/fd1633144086085a16f35c8171e2f4b6186a6fbb/D5/S1/Eigenstructure/OrthogonalAbsoluteProductMinimum.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "url": "/api/v1/collected-papers/user3-2026-orthogonal-absolute-product-minimum/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-05T08:03:24.451028456Z",
+    "record": "user3-2026-orthogonal-absolute-product-minimum",
+    "repository_name": "6aec384caafcae7b566cfd4c",
+    "source": {
+      "url": "/api/v1/collected-papers/user3-2026-orthogonal-absolute-product-minimum/files/source?version=2"
+    },
+    "title": "Resolving User3's orthogonal absolute-product question: minimum and minimizers",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-05T08:03:24.451028456Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "user3-2026-orthogonal-absolute-product-minimum"
+  }
+}
