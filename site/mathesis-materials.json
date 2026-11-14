@@ -2,12 +2,12 @@
   "schema": "mathesis.materials.v1",
   "work": "user3-2026-orthogonal-absolute-product-minimum",
   "version": 2,
-  "repository_url": "https://github.com/mathesis-papers/6aec384caafcae7b566cfd4c",
-  "site_url": "https://papers.trureturing.org/6aec384caafcae7b566cfd4c/",
+  "repository_url": "https://github.com/mathesis-papers/10.5281-zenodo.23885983",
+  "site_url": "https://papers.trureturing.org/10.5281-zenodo.23885983/",
   "doi": "10.5281/zenodo.23885984",
   "reading": {
-    "en": "https://papers.trureturing.org/6aec384caafcae7b566cfd4c/en/",
-    "zh": "https://papers.trureturing.org/6aec384caafcae7b566cfd4c/zh/"
+    "en": "https://papers.trureturing.org/10.5281-zenodo.23885983/en/",
+    "zh": "https://papers.trureturing.org/10.5281-zenodo.23885983/zh/"
   },
   "slides": [],
   "visualizations": []
