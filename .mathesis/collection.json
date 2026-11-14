@@ -1,7 +1,7 @@
 {
   "git_blobs": {
     ".github/workflows/pages.yml": "7879724db1358178aad7e9bed326a44be44f5a6a",
-    ".mathesis/generated.json": "df8a66bd79dca928bfa5b16ea8450b8de2c1ed5d",
+    ".mathesis/generated.json": "d9f4385e2c8c61107e26bf0ef9647d84ef9748a0",
     "CHANGELOG.md": "54c5d46bfd534e94d5f3d68de471a38433ae23e3",
     "CITATION.cff": "baaf1bb61a013cb177fea5b0b524ed3f758664bc",
     "CONTRIBUTING.md": "ea69168fc2cb506b57b00de1ef588aaf011aa3da",
@@ -13,12 +13,13 @@
     "manuscript/metadata.json": "0d84ab0836a2a370de33a3ec164214b6a12fd1b4",
     "manuscript/note.tex": "e588df6cee05d1249ec6b3203ae70b24009506e1",
     "manuscript/source-manifest.json": "20673679bf08413bf2819984909cd2810a0b2182",
-    "paper.json": "89110dfb3556f09356c1431421396657737b53be",
+    "paper.json": "aa622c26edcf5e15aecf0c3384bc6ac02d7539f7",
     "paper.pdf": "cee5b9c11c67aea11faae4ac0eed1b7f33cc5c3c",
     "site/en/index.html": "e278ea0585b19314e4e3943b6726ed3a260fe53a",
-    "site/index.html": "50639c58772e3b31f8d8f664879cb710ec248926",
+    "site/index.html": "3fea7d489082ae4f7c0b246617b4218b97490a63",
     "site/mathesis-materials.json": "93ee42774df0fcea7b93c242514ca1396481b59e",
     "site/zh/index.html": "550aad574b20af919ead55da8aa9072d81d0c51b",
+    "source.archive": "1fd38496b4659d5278d41d53fe9db89bb7a9b85d",
     "versions/v2/.mathesis/generated.json": "68014253b7f0486995981991de41afcec6562ed0",
     "versions/v2/CHANGELOG.md": "54c5d46bfd534e94d5f3d68de471a38433ae23e3",
     "versions/v2/CITATION.cff": "baaf1bb61a013cb177fea5b0b524ed3f758664bc",
@@ -32,12 +33,13 @@
     "versions/v2/manuscript/note.tex": "e588df6cee05d1249ec6b3203ae70b24009506e1",
     "versions/v2/manuscript/source-manifest.json": "20673679bf08413bf2819984909cd2810a0b2182",
     "versions/v2/paper.json": "c04e2ef05e57e24383cbe084ac0cf23425d49b43",
-    "versions/v2/paper.pdf": "cee5b9c11c67aea11faae4ac0eed1b7f33cc5c3c"
+    "versions/v2/paper.pdf": "cee5b9c11c67aea11faae4ac0eed1b7f33cc5c3c",
+    "versions/v2/source.archive": "1fd38496b4659d5278d41d53fe9db89bb7a9b85d"
   },
   "schema": "mathesis.paper-collection.v1",
   "sha256": {
     ".github/workflows/pages.yml": "f15d983dcb8f324ffdedb50b05f7380e11fda8723d49b5c8f10ef0f414612372",
-    ".mathesis/generated.json": "99168c8cdd2f0bd39a2378cd95e94e3e409050193e8d75d3b65101916c0d1b9e",
+    ".mathesis/generated.json": "2f3088e7f8b87d67e3f81599f2f71b94352509b4286fd311f47e0286b02e0469",
     "CHANGELOG.md": "96f9bb8732056f4b1d47b43241428070acecc224038db9b7879dd1b3b3b3062b",
     "CITATION.cff": "92f412aa702f570875b5450e6959441963bc401f1f1960b19ac7040184d77723",
     "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
@@ -49,12 +51,13 @@
     "manuscript/metadata.json": "c81f0ba305d38e169f25de3305ebb8eb8cfb85ceba0d8c08f73c975ff2b9f504",
     "manuscript/note.tex": "0eb9cfe6c9bf7a99f5ad166f57c98dffe3105bf92479d2d23e4a501e3ff13904",
     "manuscript/source-manifest.json": "d61a2af5a27d94f88b806072677d772576a9dca10a43d2d62d2c631701d22246",
-    "paper.json": "95d17e63df62671b10cd394404097fdc26fec85b7666b93c62326628551e8e64",
+    "paper.json": "5a4eada7629ed1c2e1f989d9d114d92e804ec97992980be075e21d6a8d19b747",
     "paper.pdf": "805cf769eb415c69e5fad5bc5a595cdb7d17a484ece2c18e649165213d1a3a26",
     "site/en/index.html": "b7677bd7c4e71fe32b8ed31b417ea7e1e36cfbb136bbf748b55df3287edb5310",
-    "site/index.html": "17f64354f4174cb316d6514d48475f9766cacc16b1b8aac4aab387a4241fbc30",
+    "site/index.html": "d0dda9583d0400ebae8ef16925435ad46cc0063c3a05f267355e68490f136527",
     "site/mathesis-materials.json": "07c179368d1c32e89019cb11bf8b95413a70571b5aeffffc7e38b6c3911e47d6",
     "site/zh/index.html": "bee2e19519d66d56f7af5e87a5cdce7a9dffe630d555b9e958a011ec6ff8cc40",
+    "source.archive": "864a589fac81968f5d9ac782ccee5a312deeed7e1c5fcddb3df23c1048a808fb",
     "versions/v2/.mathesis/generated.json": "5a9b155dce83e53a164a96ad2fefe64430671961928e712b6bb6d0d84c9014ad",
     "versions/v2/CHANGELOG.md": "96f9bb8732056f4b1d47b43241428070acecc224038db9b7879dd1b3b3b3062b",
     "versions/v2/CITATION.cff": "92f412aa702f570875b5450e6959441963bc401f1f1960b19ac7040184d77723",
@@ -68,7 +71,8 @@
     "versions/v2/manuscript/note.tex": "0eb9cfe6c9bf7a99f5ad166f57c98dffe3105bf92479d2d23e4a501e3ff13904",
     "versions/v2/manuscript/source-manifest.json": "d61a2af5a27d94f88b806072677d772576a9dca10a43d2d62d2c631701d22246",
     "versions/v2/paper.json": "4aae5c5af2818e01454b5c3d43a9702ce39b35fa535629470933450e25ac390c",
-    "versions/v2/paper.pdf": "805cf769eb415c69e5fad5bc5a595cdb7d17a484ece2c18e649165213d1a3a26"
+    "versions/v2/paper.pdf": "805cf769eb415c69e5fad5bc5a595cdb7d17a484ece2c18e649165213d1a3a26",
+    "versions/v2/source.archive": "864a589fac81968f5d9ac782ccee5a312deeed7e1c5fcddb3df23c1048a808fb"
   },
   "version": 2,
   "work": "user3-2026-orthogonal-absolute-product-minimum"
