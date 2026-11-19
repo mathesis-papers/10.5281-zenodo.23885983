@@ -2,16 +2,16 @@
   "files": {
     "pdf": {
       "bytes": 80980,
-      "matches_public": null,
+      "matches_public": true,
       "path": "paper.pdf",
-      "public_sha256": null,
+      "public_sha256": "805cf769eb415c69e5fad5bc5a595cdb7d17a484ece2c18e649165213d1a3a26",
       "sha256": "805cf769eb415c69e5fad5bc5a595cdb7d17a484ece2c18e649165213d1a3a26"
     },
     "source": {
       "bytes": 11203,
-      "matches_public": null,
+      "matches_public": true,
       "path": "source.archive",
-      "public_sha256": null,
+      "public_sha256": "864a589fac81968f5d9ac782ccee5a312deeed7e1c5fcddb3df23c1048a808fb",
       "sha256": "864a589fac81968f5d9ac782ccee5a312deeed7e1c5fcddb3df23c1048a808fb"
     }
   },
@@ -38,6 +38,8 @@
     "license": "CC-BY-4.0",
     "msc": [],
     "pdf": {
+      "bytes": 80980,
+      "sha256": "805cf769eb415c69e5fad5bc5a595cdb7d17a484ece2c18e649165213d1a3a26",
       "url": "/api/v1/collected-papers/user3-2026-orthogonal-absolute-product-minimum/files/pdf?version=2"
     },
     "previous_version": null,
@@ -46,6 +48,8 @@
     "record": "user3-2026-orthogonal-absolute-product-minimum",
     "repository_name": "10.5281-zenodo.23885983",
     "source": {
+      "bytes": 11203,
+      "sha256": "864a589fac81968f5d9ac782ccee5a312deeed7e1c5fcddb3df23c1048a808fb",
       "url": "/api/v1/collected-papers/user3-2026-orthogonal-absolute-product-minimum/files/source?version=2"
     },
     "title": "Resolving User3's orthogonal absolute-product question: minimum and minimizers",
